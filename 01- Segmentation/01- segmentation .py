@@ -3,11 +3,6 @@ get images from thier folders and segment it to segmented folder
 """
 
 
-
-
-
-
-
 """ 
 ################ The Real Code that segment the yellow box image ################
 # import cv2
@@ -135,14 +130,13 @@ get images from thier folders and segment it to segmented folder
 """
 
 
-
 ############################### The Final Code  ###########################################
-import cv2
 import numpy as np
 import os
+import cv2
 
 
-def Segmentation(input_folder,output_folder):
+def Segmentation(input_folder, output_folder):
     # Paths to folders
     input_folder = input_folder
     output_folder = output_folder
@@ -171,7 +165,8 @@ def Segmentation(input_folder,output_folder):
         mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
 
         # Find contours of the yellow bounding box
-        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv2.findContours(
+            mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
         # Process each detected contour
         for contour in contours:
@@ -187,25 +182,27 @@ def Segmentation(input_folder,output_folder):
                                 x + border_thickness:x + w - border_thickness]
 
             # Save the cropped image
-            output_path = os.path.join(output_folder, f"segmented_{image_name}")
+            output_path = os.path.join(
+                output_folder, f"segmented_{image_name}")
             cv2.imwrite(output_path, cropped_roi)
             print(f"Processed and saved: {output_path}")
 
             # Break if only one bounding box per image is expected
             break
 
-if __name__ == "__main__": 
-    Base_Folder = 'D:/Learning/University of sadat/Grade 4/Semester 2/06- Graduation Project/Coding/' 
-    #### # for oblique images
+
+if __name__ == "__main__":
+    Base_Folder = 'D:/Learning/University of sadat/Grade 4/Semester 2/06- Graduation Project/Coding/'
+    # for oblique images
     Oblique_INPUT_FOLDER = f'{Base_Folder}00- Dogs Femur Fracture/Oblique/'
     Oblique_OUTPUT_FOLDER = f'{Base_Folder}Segmented_DataSet_Manuel/Oblique/'
-    
-    #### # for oblique images
+
+    # for oblique images
     Overriding_INPUT_FOLDER = f'{Base_Folder}00- Dogs Femur Fracture/Overriding/'
     Overriding_OUTPUT_FOLDER = f'{Base_Folder}Segmented_DataSet_Manuel/Overriding/'
-    
+
     os.makedirs(Oblique_OUTPUT_FOLDER, exist_ok=True)
     os.makedirs(Overriding_OUTPUT_FOLDER, exist_ok=True)
-    
-    Segmentation(Oblique_INPUT_FOLDER,Oblique_OUTPUT_FOLDER)
-    Segmentation(Overriding_INPUT_FOLDER,Overriding_OUTPUT_FOLDER)
+
+    Segmentation(Oblique_INPUT_FOLDER, Oblique_OUTPUT_FOLDER)
+    Segmentation(Overriding_INPUT_FOLDER, Overriding_OUTPUT_FOLDER)
