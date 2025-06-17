@@ -144,7 +144,7 @@ The trained models demonstrated exceptional performance on the validation set. T
 
   
 
-![[accuracy.png]]
+![Accuracy image](accuracy.png)
 
   
 
@@ -222,45 +222,45 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repository:**
 
-    ```sh
+    ```sh
 
-    git clone https://github.com/your-username/dog-femur-fracture-classification.git
+    git clone https://github.com/ahmedxxzz/The-Graduation-Project
 
-    cd dog-femur-fracture-classification
-
-    ```
+    ```
 
   
 
 2.  **Create and activate a virtual environment (recommended):**
 
-    ```sh
+    ```sh
 
-    # For macOS/Linux
+      # For macOS/Linux
 
-    python3 -m venv venv
+      python3 -m venv venv
 
-    source venv/bin/activate
+      source venv/bin/activate
 
-  
+    ```
 
     # For Windows
 
-    python -m venv venv
+```sh
 
-    venv\Scripts\activate
+python -m venv venv
 
-    ```
+venv\Scripts\activate
+
+```
 
   
 
 3.  **Install the required packages:**
 
-    ```sh
+```sh
 
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
-    ```
+```
 
   
 
@@ -286,19 +286,19 @@ The easiest way to perform a classification is with the provided GUI.
 
 1.  Navigate to the application directory:
 
-    ```sh
+```sh
 
     cd Desktop-Application/
 
-    ```
+```
 
 2.  Run the application:
 
-    ```sh
+```sh
 
     python main.py  # or the relevant main script name
 
-    ```
+```
 
 3.  Click the "Upload Image" button, select a canine X-ray, and the model will predict the fracture type.
 
