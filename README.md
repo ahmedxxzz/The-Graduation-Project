@@ -314,3 +314,13 @@ The easiest way to perform a classification is with the provided GUI.
   
 
 This work was developed as a graduation project for the Faculty of Computers Science and Artificial Intelligence at the **University of Sadat City**. We extend our gratitude to our supervisors and the university for their support.
+
+
+## 👨‍💻 Project Team Members  
+
+- Ahmed Tarek  
+- Ahmed Ashraf  
+- Ahmed Eldweek  
+- Ahmed AboRashid  
+- Mostafa Safwat  
+- Mohamed Elsayed  
